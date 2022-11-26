@@ -135,13 +135,14 @@ public class PlayerMovement : MonoBehaviour
     //detect when the player colliled with a block or a spike and then call to respawn coroutine
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        if (collision.transform.CompareTag("BlockHead"))
+        if (collision.transform.CompareTag("BlockHead") && this.coroutineRespawn == null)
         {
             this.coroutineRespawn = respawn();
             StartCoroutine(this.coroutineRespawn);
         }
-        else if (collision.transform.CompareTag("Spike"))
+        else if (collision.transform.CompareTag("Spike") && this.coroutineRespawn == null)
         {
+
             this.coroutineRespawn = respawn();
             StartCoroutine(this.coroutineRespawn);
         }

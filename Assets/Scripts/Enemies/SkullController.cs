@@ -197,7 +197,7 @@ public class SkullController : EnemyController
 
                 var bullet = Instantiate(bulletsList[0], new Vector3(posX,posY,0), new Quaternion(0, 180, 0, 0));
                 bullet.GetComponent<BulletScript>().setMovesParameters(vectorDirection, speedBullet);
-                bullet.GetComponent<BulletScript>().setDamage(0.85f);
+                bullet.GetComponent<BulletScript>().setDamage(0.75f);
             }
         }
         else
@@ -215,7 +215,7 @@ public class SkullController : EnemyController
 
                 var bullet = Instantiate(bulletsList[1], new Vector3(posX, posY, 0), new Quaternion(0,180,0,0));
                 bullet.GetComponent<BulletScript>().setMovesParameters(vectorDirection, speedBullet);
-                bullet.GetComponent<BulletScript>().setDamage(0.55f);
+                bullet.GetComponent<BulletScript>().setDamage(0.5f);
             }
         }
     }
