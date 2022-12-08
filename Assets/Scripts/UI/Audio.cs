@@ -13,56 +13,12 @@ public class Audio : MonoBehaviour
     [SerializeField] AudioMixerGroup[] mixers;
     #endregion
 
-    #region Instance
-    public static Audio Instance
-    {
-        get
-        {
-            return instance;
-        }
-    }
-    #endregion
-
     #region Unity Methods
     private void Awake()
     {
-        if(FindObjectsOfType(GetType()).Length > 1)
-        {
-            Destroy(gameObject);
-        }
-
-        if(instance!= null && instance != this)
-        {
-            Destroy(gameObject);
-            return;
-        }
-        else
-        {
-            instance = this;
-        }
-
-        DontDestroyOnLoad(gameObject);
-
         source = GetComponent<AudioSource>();
     }
 
-    /// <summary>
-    /// Manage the music that is sound in the levels and in the menus
-    /// </summary>
-    private void Update()
-    {
-        if(SceneManager.GetActiveScene().name.Equals("Scene1") || 
-            SceneManager.GetActiveScene().name.Equals("Scene2") ||
-            SceneManager.GetActiveScene().name.Equals("Scene3"))
-        {
-            source.outputAudioMixerGroup = mixers[1];
-        }
-        else
-        {
- 
-            source.outputAudioMixerGroup = mixers[0];
-        }
-    }
     #endregion
 
     #region Methods
@@ -73,6 +29,21 @@ public class Audio : MonoBehaviour
     {
         source.Stop();
         source.Play();
+    }
+
+    public void changeToBattleSong()
+    {
+        source.outputAudioMixerGroup = mixers[1];
+    }
+
+    public void changeToMenuTheme()
+    {
+        source.outputAudioMixerGroup = mixers[0];
+    }
+
+    public bool isNotPlayingBattleTheme()
+    {
+        return source.outputAudioMixerGroup.name.Equals(mixers[0].name);
     }
     #endregion
 

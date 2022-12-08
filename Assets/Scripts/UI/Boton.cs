@@ -36,7 +36,6 @@ public class Boton : MonoBehaviour
         if(Input.GetKey("enter") && selected)
         {
             SceneManager.LoadScene(Escena);
-            Audio.Instance.resetSong();
         }
     }
     #endregion

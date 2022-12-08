@@ -2949,11 +2949,11 @@ PlayableDirector:
     value: {fileID: 672404092}
   - key: {fileID: 9065768869658556289, guid: e72087d52ffbbd543a59955d91387a55, type: 2}
     value: {fileID: 1767861207}
-  - key: {fileID: -5751874463619806416, guid: e72087d52ffbbd543a59955d91387a55, type: 2}
-    value: {fileID: 2133342407}
   - key: {fileID: 8874375569302322773, guid: 3e17b2fc298af1e408b2ac063b6ab906, type: 2}
     value: {fileID: 2133342407}
   - key: {fileID: 5882155018505109648, guid: ccccf8eafcc980749b67b0872efd6382, type: 2}
+    value: {fileID: 2133342407}
+  - key: {fileID: 2012028565290935435, guid: e72087d52ffbbd543a59955d91387a55, type: 2}
     value: {fileID: 2133342407}
   m_ExposedReferences:
     m_References:
@@ -3208,7 +3208,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &2133342408
 RectTransform:
   m_ObjectHideFlags: 0

@@ -20,7 +20,7 @@ public class CinematicController : MonoBehaviour
     private void Update()
     {
         if (directorControl.playableAsset.name.Equals(cinematicParts[1].name) &&
-            (Input.GetKeyUp("space") || Input.GetMouseButtonUp(0)))
+            Input.GetKey("space"))
         {
             
             directorControl.playableAsset = cinematicParts[2];
@@ -31,6 +31,7 @@ public class CinematicController : MonoBehaviour
     public void changeToPart2() 
     {
         directorControl.playableAsset= cinematicParts[1];
+        directorControl.Play();
     }
 
     

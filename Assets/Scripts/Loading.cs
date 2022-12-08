@@ -35,7 +35,18 @@ public class Loading : MonoBehaviour
     {
         //yield return new WaitForSeconds(1f);
         AsyncOperation operation = SceneManager.LoadSceneAsync(nextScene);
-        Audio.Instance.resetSong();
+        if(nextScene.Equals("Scene1") || nextScene.Equals("Scene2") || nextScene.Equals("Scene3"))
+        {
+            if(GameManager.instance.GetComponent<Audio>().isNotPlayingBattleTheme())
+                GameManager.instance.GetComponent<Audio>().changeToBattleSong();
+        }
+        else
+        {
+            if (!GameManager.instance.GetComponent<Audio>().isNotPlayingBattleTheme())
+                GameManager.instance.GetComponent<Audio>().changeToMenuTheme();
+        }
+
+
         while(!operation.isDone)
         {
             float progess = Mathf.Clamp01(operation.progress / .9f);
